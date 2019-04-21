@@ -5,14 +5,19 @@
 
 import React from 'react'
 import { hot } from 'react-hot-loader'
-import Elem from './comp/Elem/Elem'
-import Item from './comp/Item/Item'
+import ViewportApp from './pocs/ViewportApp/ViewportApp'
+import s from './App.css'
 
-const App = () => (
-  <>
-    <Elem title="Elem" body={4321} />
-    <Item title="Item" body={1234} />
-  </>
+type Props = {
+  alias: ?String,
+}
+
+const compName = 'App'
+
+const App = (props: Props) => (
+  <div comp={compName} alias={props.alias} className={s.comp}>
+    <ViewportApp />
+  </div>
 )
 
 export default hot(module)(App)
