@@ -7,8 +7,10 @@ import { unstyle } from 'ansi-colors';
 type Props = {
   fg: ?String,
   bg: ?String,
-  w: ?String,
-  h: ?String,
+  w: ?Number,
+  h: ?Number,
+  vw: ?Number,
+  vh: ?Number,
 }
 
 const compName = 'Viewport'
@@ -26,6 +28,8 @@ export default Viewport
 const style = (props: Props) => ({
   color: props.fg,
   backgroundColor: props.bg,
-  width: props.w,
-  height: props.h,
+  width: props.w + 'px',
+  height: props.h + 'px',
+  maxWidth: props.w > props.vw ? props.vw + 'px' : props.w + 'px',
+  maxHeight: props.h > props.vh ? props.vh + 'px' : props.h + 'px',
 });

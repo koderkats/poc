@@ -1,10 +1,10 @@
 // @flow
 
 import React from 'react'
-import Viewport from './comp/Viewport/Viewport'
-import E from './comp/E/E'
-import D from './comp/D/D'
-import S from './comp/S/S'
+import Viewport from '../../comp/Viewport/Viewport'
+import E from '../../comp/E/E'
+import D from '../../comp/D/D'
+import S from '../../comp/S/S'
 
 const ViewportApp = () => (
   <>
@@ -21,7 +21,7 @@ const ViewportApp = () => (
       _ { padding-left:3px; padding-right:3px; background:white; color:green; }
     `}</style>
 
-<Viewport alias="viewport" fg="purple" bg="pink" w="400px" h={`${window.innerHeight}px`}>
+<Viewport alias="viewport" fg="purple" bg="pink" w={1280} h={720} vw={window.innerWidth} vh={window.innerHeight}>
       test message
       <D alias="page-cont-wordList-a">
         <D alias="page-cont-wordList">
