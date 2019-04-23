@@ -5,7 +5,7 @@
 
 import React from 'react'
 import { hot } from 'react-hot-loader'
-import ViewportApp from './pocs/ViewportApp/ViewportApp'
+import ViewBoxApp from './pocs/ViewBoxApp/ViewBoxApp'
 import s from './App.css'
 
 type Props = {
@@ -16,7 +16,7 @@ const compName = 'App'
 
 const App = (props: Props) => (
   <div comp={compName} alias={props.alias} className={s.comp}>
-    <ViewportApp />
+    <ViewBoxApp />
   </div>
 )
 

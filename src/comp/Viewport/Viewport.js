@@ -11,6 +11,7 @@ type Props = {
   h: ?Number,
   vw: ?Number,
   vh: ?Number,
+  alignContent: ?String,
 }
 
 const compName = 'Viewport'
@@ -32,4 +33,5 @@ const style = (props: Props) => ({
   height: props.h + 'px',
   maxWidth: props.w > props.vw ? props.vw + 'px' : props.w + 'px',
   maxHeight: props.h > props.vh ? props.vh + 'px' : props.h + 'px',
+  textAlign: props.alignContent ? props.alignContent : '',
 });
