@@ -18,10 +18,10 @@ const ViewportApp = () => (
       _ { padding-left:3px; padding-right:3px; background:white; color:green; }
     `}</style>
 
-    <Viewport alias="viewport" w={960} h={320} vw={window.innerWidth} vh={window.innerHeight} alignContent="left">
-      <ViewBox alias="viewbox" hMax={window.innerHeight} overflowX="scroll" overflowY="hidden" display="flex">
+    <Viewport alias="viewport" w={960} h={320} vw={window.innerWidth} vh={window.innerHeight} s={{alignContent:"left"}}>
+      <ViewBox alias="viewbox" s={{overflowX:"scroll", overflowY:"hidden", display:"flex"}}>
 
-        <ViewBox alias="viewbox" minWidth={360} >
+        <ViewBox alias="viewbox" s={{minWidth:'360px'}} >
           <D alias="page-cont-wordList">
             <D>DDDD</D>
             <D>DDDD</D>
@@ -54,7 +54,7 @@ const ViewportApp = () => (
           </D>
         </ViewBox>
 
-        <ViewBox alias="viewbox" minWidth={360}>
+        <ViewBox alias="viewbox" s={{minWidth:'360px'}}>
           <D alias="page-cont-wordList">
             <D>DDDD</D>
             <D>DDDD</D>
@@ -69,7 +69,7 @@ const ViewportApp = () => (
           </D>
         </ViewBox>
 
-        <ViewBox alias="viewbox" minWidth={360}>
+        <ViewBox alias="viewbox" s={{minWidth:'360px'}}>
           <D alias="page-cont-wordList">
             <D>DDDD</D>
             <D>DDDD</D>

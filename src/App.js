@@ -13,9 +13,11 @@ type Props = {
 }
 
 const compName = 'App'
+let i = 0;
 
 const App = (props: Props) => (
   <div comp={compName} alias={props.alias} className={s.comp}>
+    {window.addEventListener('resize', function(){ location.reload(true); })}
     <ViewBoxApp />
   </div>
 )
