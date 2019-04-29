@@ -5,21 +5,14 @@
 
 import React from 'react'
 import { hot } from 'react-hot-loader'
-import ViewBoxApp from './pocs/ViewBoxApp/ViewBoxApp'
+import Containers from './html/Containers/Containers'
 import s from './App.css'
 
-type Props = {
-  alias: ?String,
-}
-
-const compName = 'App'
-let i = 0;
-
-const App = (props: Props) => (
-  <div comp={compName + ' a'} alias={props.alias} className={s.comp} id="a">
+const App = (props) => (
+  <>
     {window.addEventListener('resize', function(){ location.reload(true); })}
-    <ViewBoxApp />
-  </div>
+    <Containers />
+  </>
 )
 
 export default hot(module)(App)
