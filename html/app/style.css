@@ -1,0 +1,29 @@
+body {
+  margin:0;
+  width:100%;
+  height:100%;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+.app-container {
+  height:100%;
+  background:gray;
+  overflow:hidden;
+}
+
+.container {
+  display:flex;
+  flex-direction:row;
+  flex:1 1 auto;
+}
+
+.item-container {
+  display:flex;
+  flex-direction:row;
+  flex:1 1 auto;
+  height:40px;
+  background:green;
+}
