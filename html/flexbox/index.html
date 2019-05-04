@@ -1,50 +1,64 @@
-<html>
-
-<style>
-  body { margin:0; width:100%; height:100%; }
-  .msg { color:white; font-family:arial; font-size:30px; padding:15px;}
-</style>
-
-<body>
+<html><body>
 <!-------------------------------------------------->
 
 <style>
-  div { box-sizing: border-box; }
-  .app-container { height:100%; background:black; overflow:hidden; }
 
-  .container:nth-child(1) { margin-top:30px;}
-  .container { margin-bottom:30px; background:gray; }
+  body { margin:0; width:100%; height:100%; background:#888;}
+  .msg { color:white; font-family:arial; font-size:30px; margin:15px;}
+
+  div { box-sizing: border-box; }
+  .app-container { height:100%; }
+
+  .item1 { min-width:100px; }
+  .item2 { min-width:200px; }
+  .item3 { min-width:400px; }
+
+  .container:last-child { margin-bottom:30px;}
+  .container { background:gray; }
+
+  .item-container { display:flex; flex-direction:row; flex-grow:1; flex-shrink:1; flex-basis:auto; height:auto; border:2px solid black; }
+  .item { height:40px; }
 
   .flex-a.container {}
+
   .flex-b.container { display:flex; flex-direction:row; flex-grow:1; flex-shrink:1; flex-basis:auto; height:auto; }
 
-  .item-container { display:flex; flex-direction:row; flex-grow:1; flex-shrink:1; flex-basis:auto; height:auto; border:1px solid red; }
-
+  .flex-c.container { display:flex; flex-direction:row; flex-grow:1; flex-shrink:1; flex-basis:auto; height:auto; }
+  .flex-c .item { width:100%; }
+  
 
 </style>
 
 <div class="app-container">
 
-  <div class="msg">FLEX-B: flex-grow:1; flex-shrink:1; flex-basis:auto;</div>
-  <div class="flex-b container">
-    <div class="item-container"><div class="item" style="width:100px;height:100px;"></div></div>
-    <div class="item-container"><div class="item" style="width:200px;height:100px;"></div></div>
-    <div class="item-container"><div class="item" style="width:400px;height:100px;"></div></div>
+  <div class="msg">FLEX-C</div>
+  <div class="msg">flex-grow:1; flex-shrink:1; flex-basis:auto;</div>
+  <div class="msg">.item min-heights (100px, 200px, 400px)</div>
+  <div class="msg">.item heights 100%</div>
+  <div class="flex-c container">
+    <div class="item-container"><div class="item item1"></div></div>
+    <div class="item-container"><div class="item item2"></div></div>
+    <div class="item-container"><div class="item item3"></div></div>
   </div>
 
 
-  <div class="msg">FLEX-B: flex-grow:1; flex-shrink:1; flex-basis:auto;</div>
+  <div class="msg">FLEX-B</div>
+  <div class="msg">flex-grow:1; flex-shrink:1; flex-basis:auto;</div>
+  <div class="msg">.item min-heights (100px, 200px, 400px)</div>
+  <div class="msg">.item heights not set</div>
   <div class="flex-b container">
-    <div class="item-container"><div class="item" style="width:100px;height:100px;"></div></div>
-    <div class="item-container"><div class="item" style="width:200px;height:100px;"></div></div>
-    <div class="item-container"><div class="item" style="width:400px;height:100px;"></div></div>
+    <div class="item-container"><div class="item item1"></div></div>
+    <div class="item-container"><div class="item item2"></div></div>
+    <div class="item-container"><div class="item item3"></div></div>
   </div>
 
-  <div class="msg">FLEX-A: no flex </div>
+  <div class="msg">FLEX-A</div>
+  <div class="msg">no flex </div>
+  <div class="msg">.item min-heights (100px, 200px, 400px)</div>
   <div class="flex-a container">
-    <div class="item-container"><div class="item" style="width:100px;height:100px;"></div></div>
-    <div class="item-container"><div class="item" style="width:200px;height:100px;"></div></div>
-    <div class="item-container"><div class="item" style="width:400px;height:100px;"></div></div>
+    <div class="item-container"><div class="item item1"></div></div>
+    <div class="item-container"><div class="item item2"></div></div>
+    <div class="item-container"><div class="item item3"></div></div>
   </div>
 
 </div>
@@ -55,9 +69,9 @@
 <script>
   const items = document.querySelectorAll('.item');
   for(let item of items){
-    var r = Math.floor(255 * Math.random());
-    var g = Math.floor(255 * Math.random());
-    var b = Math.floor(255 * Math.random());
+    var r = 100 + Math.floor(150 * Math.random());
+    var g = 100 + Math.floor(150 * Math.random());
+    var b = 100 + Math.floor(150 * Math.random());
     item.style.background = `rgb(${r},${g},${b})`
   }
 </script>
