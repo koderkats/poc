@@ -1,87 +1,130 @@
 <html><body>
-<!-------------------------------------------------->
 
+<!--###########################################-->
 <style>
-
-  body { margin:0; width:100%; height:100%; background:#888;}
-  .msg { color:white; font-family:arial; font-size:30px; margin:15px;}
-  .msg.title { border-top: 2px solid black; padding-top:10px; }
+  pre { border-top:2px solid black; font-size:14px; }
+  body { margin:0; width:100%; height:100%; background:#888;  color:white; font-family:arial; font-size:16px; }
+  .msg.title { display:block; padding-top:10px; font-weight: 600; font-size:22px; text-indent: 15px; }
+  .msg.details { text-indent: 30px; }
   
   div { box-sizing: border-box; }
-  .app-container { height:100%; }
+  .app-container { display:block; position:absolute; width:100%;}
 
   .item1 { min-width:100px; }
   .item2 { min-width:200px; }
   .item3 { min-width:400px; }
 
-  .container:last-child { margin-bottom:30px;}
-  .container { background:gray; }
+  .container { margin-top:30px; margin-bottom:30px; background:gray;}
 
   .item-container { display:flex; flex-direction:row; flex-grow:1; flex-shrink:1; flex-basis:auto; height:auto; border:2px solid black; }
   .item { height:40px; }
-
-  .flex-a.container {}
-
-  .flex-b.container { display:flex; flex-direction:row; flex-grow:1; flex-shrink:1; flex-basis:auto; height:auto; }
-
-  .flex-c.container { display:flex; flex-direction:row; flex-grow:1; flex-shrink:1; flex-basis:auto; height:auto; }
-  .flex-c .item { width:100%; }
-
-  .flex-d.container { display:flex; flex-direction:row; flex-grow:1; flex-shrink:1; flex-basis:auto; height:auto; }
-  .flex-d .item-container { flex-grow:0; }
-  .flex-d .item { overflow:hidden; }
-
+  
 </style>
 
-<div class="app-container">
 
-  <div class="msg title">FLEX-D (use FLEX-B as Base)</div>
-  <div class="msg">flex-grow:1; flex-shrink:1; flex-basis:auto;</div>
-  <div class="msg">.item min-widths (100px, 200px, 400px)</div>
-  <div class="msg">.item widths not set</div>
-  <div class="msg">.item-container flex-grow:0</div>
-  <div>
-    <div class="flex-d container">
-      <div class="item-container"><div class="item item1"></div></div>
-      <div class="item-container"><div class="item item2"></div></div>
-      <div class="item-container"><div class="item item3"></div></div>
+<!--###########################################-->
+<div class="app-container">
+<!----------------------------------------------->
+<style>
+  .flex-f.container { display:flex; flex-direction:row; flex-grow:1; flex-shrink:1; flex-basis:auto; height:auto; min-height:100px; float:right;}
+  .flex-f .item-container { flex-grow:0; margin:0px; }
+  .flex-f .item-container { flex-grow:0; margin:0px; }
+</style>
+
+<div style="min-height:300px; display:block">
+  <div class="msg title" style="display:block;">FLEX-F</div>
+
+  <div style="display:block;">
+    <div class="flex-f container">
+      <div class="item item1"></div>
+      <div class="item item2"></div>
+      <div class="item item3"></div>
     </div>
   </div>
 
-  <div class="msg title">FLEX-C</div>
-  <div class="msg">flex-grow:1; flex-shrink:1; flex-basis:auto;</div>
-  <div class="msg">.item min-widths (100px, 200px, 400px)</div>
-  <div class="msg">.item widths 100%</div>
-  <div class="flex-c container">
-    <div class="item-container"><div class="item item1"></div></div>
-    <div class="item-container"><div class="item item2"></div></div>
-    <div class="item-container"><div class="item item3"></div></div>
-  </div>
-
-  <div class="msg title">FLEX-B</div>
-  <div class="msg">flex-grow:1; flex-shrink:1; flex-basis:auto;</div>
-  <div class="msg">.item min-widths (100px, 200px, 400px)</div>
-  <div class="msg">.item widths not set</div>
-  <div class="flex-b container">
-    <div class="item-container"><div class="item item1"></div></div>
-    <div class="item-container"><div class="item item2"></div></div>
-    <div class="item-container"><div class="item item3"></div></div>
-  </div>
-
-  <div class="msg title">FLEX-A</div>
-  <div class="msg">no flex </div>
-  <div class="msg">.item min-widths (100px, 200px, 400px)</div>
-  <div class="flex-a container">
-    <div class="item-container"><div class="item item1"></div></div>
-    <div class="item-container"><div class="item item2"></div></div>
-    <div class="item-container"><div class="item item3"></div></div>
+  <div style="display:block;">
+    <div class="flex-f container" style="float:left">
+      <div class="item item1"></div>
+      <div class="item item2"></div>
+      <div class="item item3"></div>
+    </div>
   </div>
 
 </div>
 
+
+<!----------------------------------------------->
+<style>
+  .flex-e.container { display:flex; flex-direction:row; flex-grow:1; flex-shrink:1; flex-basis:auto; height:auto; }
+  .flex-e .item-container { flex-grow:0; }
+</style>
+
+<div class="msg title">FLEX-E</div>
+
+<div class="flex-e container">
+  <div class="item item1"></div>
+  <div class="item item2"></div>
+  <div class="item item3"></div>
+</div>
+
+<!----------------------------------------------->
+<style>
+  .flex-d.container { display:flex; flex-direction:row; flex-grow:1; flex-shrink:1; flex-basis:auto; height:auto; }
+  .flex-d .item-container { flex-grow:0; }
+</style>
+
+<div class="msg title">FLEX-D</div>
+
+<div class="flex-d container">
+  <div class="item-container"><div class="item item1"></div></div>
+  <div class="item-container"><div class="item item2"></div></div>
+  <div class="item-container"><div class="item item3"></div></div>
+</div>
+
+<!----------------------------------------------->
+<style>
+  .flex-c.container { display:flex; flex-direction:row; flex-grow:1; flex-shrink:1; flex-basis:auto; height:auto; }
+  .flex-c .item { width:100%; }
+</style>
+
+
+<div class="msg title">FLEX-C</div>
+<div class="flex-c container">
+  <div class="item-container"><div class="item item1"></div></div>
+  <div class="item-container"><div class="item item2"></div></div>
+  <div class="item-container"><div class="item item3"></div></div>
+</div>
+
+<!----------------------------------------------->
+<style>
+  .flex-b.container { display:flex; flex-direction:row; flex-grow:1; flex-shrink:1; flex-basis:auto; height:auto; }
+</style>
+
+<div class="msg title">FLEX-B</div>
+<div class="flex-b container">
+  <div class="item-container"><div class="item item1"></div></div>
+  <div class="item-container"><div class="item item2"></div></div>
+  <div class="item-container"><div class="item item3"></div></div>
+</div>
+
+<!----------------------------------------------->
+<style>
+  .flex-a.container {}
+</style>
+
+<div class="msg title">FLEX-A</div>
+
+<div class="flex-a container">
+  <div class="item-container"><div class="item item1"></div></div>
+  <div class="item-container"><div class="item item2"></div></div>
+  <div class="item-container"><div class="item item3"></div></div>
+</div>
+
 <!-------------------------------------------------->
+</div>
 </body>
 
+<!--**********************************************-->
 <script>
   const items = document.querySelectorAll('.item');
   for(let item of items){
@@ -92,4 +135,5 @@
   }
 </script>
 
+<!--**********************************************-->
 </html>
