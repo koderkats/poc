@@ -1,0 +1,103 @@
+<html><body>
+
+<!--###########################################-->
+<style>
+  body { margin:0; width:100%; height:100%; background:#888;  color:white; font-family:arial; font-size:16px; }
+  .msg.title { display:block; padding-top:10px; font-weight: 600; font-size:22px; text-indent: 15px; }
+  .msg.details { text-indent: 30px; }
+  
+  div { box-sizing: border-box; display:inline-block; }
+
+  .app-container { display:block; position:absolute; width:100%;}
+
+  .container { display:flex; flex-direction:row; flex-grow:1; flex-shrink:1; flex-basis:auto; height:auto; max-width:100%; width:auto; background:white; }
+
+  .item-container { display:flex; flex-direction:row; flex-grow:1; flex-shrink:1; flex-basis:auto; height:auto; border:2px solid black; }
+  .item { height:40px; min-width:100px; }
+  
+</style>
+
+<!--###########################################-->
+<div class="app-container">
+<!----------------------------------------------->
+<style>
+  .app-container { height:100%; }
+  .header { width:100%; background:white; }
+  .item { display:flex; justify-content:center; align-items:center; color:red; text-shadow: 2px 2px black; font-size:28px; font-weight:700; background:white; }
+  .item.active { background:#ccc; border-radius: 20px 20px 0 0; }
+  .item:hover:not(.active) { background:#eee; border-radius: 20px 20px 0 0; }
+  .flex-left .item-container { flex-grow:0; }
+  .segment.left { float:left; }
+
+  .contentItem:not(active) { display:none; }
+  .contentItem.active { display:flex; }
+
+  .content { background:#ccc; color:black; width:100%; height:100%; }
+</style>
+
+<div class="header">
+
+  <div class="segment left">
+    <div class="flex-left container">
+      <div data-tabid="1" data-tabset="1" class="item item1 active" onclick="app.onTabClick(this)">Tab-A</div>
+      <div data-tabid="2" data-tabset="1" class="item item2" onclick="app.onTabClick(this)">Tab-B</div>
+      <div data-tabid="3" data-tabset="1" class="item item3" onclick="app.onTabClick(this)">Tab-C</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="content">
+  <div data-contentid="1" data-contentset="1" class="contentItem contentItem1 active" onclick="app.onTabClick(this)">Content-A</div>
+  <div data-contentid="2" data-contentset="1" class="contentItem contentItem2" onclick="app.onTabClick(this)">Content-B</div>
+  <div data-contentid="3" data-contentset="1" class="contentItem contentItem3" onclick="app.onTabClick(this)">Content-C</div>
+</div>
+
+
+<!-------------------------------------------------->
+</div>
+</body>
+
+<!--**********************************************-->
+<script>
+
+//const items = document.querySelectorAll('.item');
+//for(let item of items){
+//  var r = Math.floor(255 * Math.random());
+//  var g = Math.floor(255 * Math.random());
+//  var b = Math.floor(255 * Math.random());
+//  item.style.background = `rgb(${r},${g},${b})`
+//}
+
+let app = {}
+app.onTabClick = (evt) => {
+  const tabSet = evt.attributes['data-tabset'].value
+  const tabId = evt.attributes['data-tabid'].value
+
+  const tabElement = document.querySelector(`[data-tabid="${tabId}"]`);
+  const tabElements = document.querySelectorAll(`[data-tabset="${tabSet}"]`);
+
+  const contentElement = document.querySelector(`[data-contentid="${tabId}"]`);
+  const contentElements = document.querySelectorAll(`[data-contentset="${tabSet}"]`);
+
+  
+
+  if (tabElement) {
+    for(let tab of tabElements) {
+      tab.classList.remove('active');
+    }
+    tabElement.classList.add('active');
+
+    for(let content of contentElements) {
+      content.classList.remove('active');
+    }
+    contentElement.classList.add('active');
+
+  }
+}
+window.app = app
+
+</script>
+
+<!--**********************************************-->
+</html>
