@@ -15,7 +15,8 @@ which(2, {
   2: () => console.log('two'),
   3: () => console.log('three'),
 });
-
+// OUTPUT:
+// two
 
 
 const s = 'd'
@@ -29,7 +30,11 @@ const returnValue = which(s, {
     return 'world';
   },
 }, 'default');
+// OUTPUT:
+// hello
 
 console.log(returnValue);
+// OUTPUT:
+// world
 
 </script></html>
